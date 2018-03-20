@@ -1,4 +1,11 @@
 <h2>Create an Author</h2>
+<%if flash[:error]%>
+  <ul>
+    <% flash[:error].each do |error|%>
+    <li><%=error%></li>
+    <%end%>
+  </ul>
+<%end%>
 <%= form_tag authors_path, method: "post" do %>
   <div class="field">
     <%= label_tag "name", "Name" %>
